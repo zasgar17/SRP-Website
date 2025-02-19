@@ -55,28 +55,35 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.sdg-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 30px; 
-    margin: 200px;
-    margin-top: 80px;
-}
-
-.sdg-square {
-    aspect-ratio: 1 / 1;
-    padding: 10px; 
+.sdg-page {
+    font-family: 'League Spartan', sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
     text-align: center;
-    cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
-    background: white; 
+    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
+                url('https://i.pinimg.com/736x/9f/64/2c/9f642caf61ab5f43fd5f6aa2220e9338.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
 }
 
-.sdg-square:hover {
-    transform: scale(1.08);
+
+.sdg-content {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.503);
+    padding: 20px;
+    border-radius: 10px;
 }
 
+.sdg-intro {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 
 footer {
     background-color: #fbf4e4;
@@ -84,4 +91,3 @@ footer {
     text-align: center;
     padding: 15px;
 }
-
