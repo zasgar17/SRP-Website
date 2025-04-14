@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDG 1 - No Poverty</title>
+    <title>Act for Impact</title>
     <link rel="stylesheet" href="sdgs.css">
 </head>
 <body>
@@ -11,6 +11,11 @@
         <div class="site-name">
             <img src="../images/logocopy.jpeg" alt="Site Logo" class="logo">
             <h1>Act for Impact</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <nav>
             <ul>
@@ -22,7 +27,18 @@
         </nav>
     </header>
 
-    <main class="sdg-page">
+    <main class="sdg-page" style="
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
+                url('https://i.pinimg.com/736x/9f/64/2c/9f642caf61ab5f43fd5f6aa2220e9338.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+">
         <div class="sdg-content">
             <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
                 challenges facing humanity. Despite progress, millions still live in extreme poverty. 
@@ -36,6 +52,8 @@
         </div>
     </main>
 
+    <script src="script.js"></script>
+    
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>
     </footer>

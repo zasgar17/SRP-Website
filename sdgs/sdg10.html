@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDG 1 - No Poverty</title>
+    <title>Act for Impact</title>
     <link rel="stylesheet" href="sdgs.css">
 </head>
 <body>
@@ -11,6 +11,11 @@
         <div class="site-name">
             <img src="../images/logocopy.jpeg" alt="Site Logo" class="logo">
             <h1>Act for Impact</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <nav>
             <ul>
@@ -22,20 +27,39 @@
         </nav>
     </header>
 
-    <main class="sdg-page">
+    <main class="sdg-page" style="
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
+                url('https://i.pinimg.com/736x/02/2f/34/022f3475e3849e09b4529224f00d8e6d.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+">
         <div class="sdg-content">
             <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
                 challenges facing humanity. Despite progress, millions still live in extreme poverty. 
                 Sustainable economic growth, social protection, and equal opportunities are vital for 
                 addressing this global issue.</p>
             <h2>Reduced Inequalities</h2>
-            <p>Poverty affects access to food, education, healthcare, and basic human rights. 
-                Eradicating it requires policies that ensure economic resources and services for all, 
-                with a focus on marginalized communities. By supporting inclusive development and fair wages, 
-                we can build a more equitable world.</p>
+            <p>Sustainable Development Goal 10 (SDG 10) focuses on reducing inequalities within and among countries, 
+                addressing disparities in income, opportunities, and access to essential services. 
+                Economic inequality has widened globally, with wealth concentrated in the hands of a few while 
+                marginalized communities struggle with poverty and exclusion. SDG 10 aims to promote social, economic, 
+                and political inclusion by tackling discrimination based on age, gender, disability, race, 
+                and migration status. It also emphasizes the importance of fair wages, equal access to education and healthcare, 
+                and financial policies that support lower-income populations. Beyond national efforts, the goal highlights 
+                the need for improved representation of developing countries in global decision-making. By ensuring fair and 
+                equitable systems, SDG 10 helps create a more stable and prosperous world where no one is left behind. 
+                Reducing inequality leads to stronger societies, greater innovation, and more inclusive economic growth.</p>
         </div>
     </main>
 
+    <script src="script.js"></script>
+    
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>
     </footer>

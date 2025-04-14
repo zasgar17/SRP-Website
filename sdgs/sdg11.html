@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDG 1 - No Poverty</title>
+    <title>Act for Impact</title>
     <link rel="stylesheet" href="sdgs.css">
 </head>
 <body>
@@ -11,6 +11,11 @@
         <div class="site-name">
             <img src="../images/logocopy.jpeg" alt="Site Logo" class="logo">
             <h1>Act for Impact</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <nav>
             <ul>
@@ -22,13 +27,24 @@
         </nav>
     </header>
 
-    <main class="sdg-page">
+    <main class="sdg-page" style="
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
+                url('https://img.freepik.com/free-vector/illustration-human-avatar-with-environment_53876-17627.jpg?t=st=1740048998~exp=1740052598~hmac=b24ec241353b33cd910a24a75a6bf23884fcde2bb443fbf885b23c8daa3ed9ae&w=1380');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+">
         <div class="sdg-content">
             <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
                 challenges facing humanity. Despite progress, millions still live in extreme poverty. 
                 Sustainable economic growth, social protection, and equal opportunities are vital for 
                 addressing this global issue.</p>
-            <h2>Sustainable Cities and Communuties</h2>
+            <h2>Sustainable Cities and Communities</h2>
             <p>Poverty affects access to food, education, healthcare, and basic human rights. 
                 Eradicating it requires policies that ensure economic resources and services for all, 
                 with a focus on marginalized communities. By supporting inclusive development and fair wages, 
@@ -36,6 +52,8 @@
         </div>
     </main>
 
+    <script src="script.js"></script>
+    
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>
     </footer>

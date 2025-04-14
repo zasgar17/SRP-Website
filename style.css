@@ -85,3 +85,133 @@ footer {
     padding: 15px;
 }
 
+@media (max-width: 1024px) {
+    .sdg-grid {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 100px 40px 40px;
+        gap: 20px;
+    }
+
+    header .site-name h1 {
+        font-size: 20px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-name {
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .sdg-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 60px 20px 20px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 60px;
+    }
+
+    header .site-name h1 {
+        font-size: 18px;
+    }
+
+    .sdg-grid {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 40px 10px 10px;
+        gap: 10px;
+    }
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgba(106, 131, 43, 1);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fbf4e4;
+        padding: 10px 20px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    text-align: center;
+}
+
+.team-member {
+    max-width: 160px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(106, 131, 43, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+}
+
+.team-member p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+}
