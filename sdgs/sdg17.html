@@ -18,41 +18,52 @@
             <div></div>
         </div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About Us</a></li>
                 <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="sdg-page" style="
+    <main id="sdg17" class="sdg-page" style="
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
     background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
-                url('https://i.pinimg.com/736x/9f/64/2c/9f642caf61ab5f43fd5f6aa2220e9338.jpg');
+                url('https://i.pinimg.com/736x/b6/0e/06/b60e0657151919bab0f972ba15dfb826.jpg');
     background-size: cover;
     background-position: center;
     padding: 50px;
 ">
         <div class="sdg-content">
-            <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
-                challenges facing humanity. Despite progress, millions still live in extreme poverty. 
-                Sustainable economic growth, social protection, and equal opportunities are vital for 
-                addressing this global issue.</p>
-            <h2>Partnership for The Goals</h2>
-            <p>Poverty affects access to food, education, healthcare, and basic human rights. 
-                Eradicating it requires policies that ensure economic resources and services for all, 
-                with a focus on marginalized communities. By supporting inclusive development and fair wages, 
-                we can build a more equitable world.</p>
+            <p id="sdg17-intro" class="sdg-intro">Tackling the world’s greatest challenges requires global unity. 
+                SDG 17 emphasizes the vital role of partnerships in achieving all other Sustainable Development Goals. 
+                From sharing knowledge to providing resources, collaboration strengthens progress. Only through joint 
+                efforts can we create a fair and sustainable future for all.</p>
+            <h2 id="sdg17-title">Partnership for The Goals</h2>
+            <p id="sdg17-description">Sustainable Development Goal 17 (SDG 17) emphasizes the importance of global 
+                partnerships to achieve the SDGs. No single country or organization can tackle global challenges alone. 
+                SDG 17 targets include enhancing international cooperation, supporting capacity-building in developing 
+                countries, promoting fair trade, and improving access to technology and innovation. It also encourages 
+                mobilizing financial resources, sharing knowledge and expertise, and improving policy coherence among 
+                nations. Strong partnerships between governments, private sectors, civil society, and individuals are 
+                essential to drive progress. Building inclusive alliances based on trust and mutual goals ensures that 
+                development efforts are effective and far-reaching. This goal reminds us that collaboration, solidarity, 
+                and shared responsibility are key to building a sustainable future for all.</p>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>

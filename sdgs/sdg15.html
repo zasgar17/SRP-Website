@@ -18,16 +18,22 @@
             <div></div>
         </div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About Us</a></li>
                 <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="sdg-page" style="
+    <main id="sdg15" class="sdg-page" style="
     position: relative;
     display: flex;
     justify-content: center;
@@ -40,19 +46,22 @@
     padding: 50px;
 ">
         <div class="sdg-content">
-            <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
-                challenges facing humanity. Despite progress, millions still live in extreme poverty. 
-                Sustainable economic growth, social protection, and equal opportunities are vital for 
-                addressing this global issue.</p>
-            <h2>Life on Land</h2>
-            <p>Poverty affects access to food, education, healthcare, and basic human rights. 
-                Eradicating it requires policies that ensure economic resources and services for all, 
-                with a focus on marginalized communities. By supporting inclusive development and fair wages, 
-                we can build a more equitable world.</p>
+            <p id="sdg15-intro" class="sdg-intro">Land ecosystems are home to most of the planet’s biodiversity 
+                and are essential for human life. Forests, soil, and wildlife play a key role in climate balance, 
+                food security, and health. SDG 15 aims to protect these natural systems and ensure their sustainable 
+                use.</p>
+            <h2 id="sdg15-title">Life on Land</h2>
+            <p id="sdg15-description">Sustainable Development Goal 15 (SDG 15) focuses on protecting, restoring, 
+                and promoting sustainable use of terrestrial ecosystems, forests, and biodiversity. Forests and 
+                land ecosystems provide vital services such as air purification, climate regulation, and food resources. 
+                However, they are threatened by deforestation, desertification, and loss of biodiversity. SDG 15 targets 
+                include halting deforestation, restoring degraded land, combating desertification, and protecting 
+                endangered species. Life on land is deeply interconnected with human survival and well-being. 
+                Preserving nature ensures a balanced, thriving planet for future generations.</p>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>

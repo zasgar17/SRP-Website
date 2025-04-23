@@ -18,40 +18,49 @@
             <div></div>
         </div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About Us</a></li>
                 <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="sdg-page">    <main class="sdg-page" style="
+    <main id="sdg12" class="sdg-page" style="
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 80vh;
         background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
-                    url('https://img.freepik.com/free-vector/production-typographic-header-entrepreneurship-organization-idea-business-mechanism-cooperation-with-suppliers-production-selling-isolated-flat-vector-illustration_613284-1436.jpg?t=st=1740048314~exp=1740051914~hmac=e434e511afbf32d1e529d3cd196cd08861db46f4807a3c7e08cc9e61adfc3f04&w=1800');
+                    url('https://vectormine.b-cdn.net/wp-content/uploads/circular_economy_and_life_cycle_assessment_outline_concept-1.jpg');
         background-size: cover;
         background-position: center;
         padding: 50px;
     ">    <div class="sdg-content">
-            <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
-                challenges facing humanity. Despite progress, millions still live in extreme poverty. 
-                Sustainable economic growth, social protection, and equal opportunities are vital for 
-                addressing this global issue.</p>
-            <h2>Responsible Consumption and Production</h2>
-            <p>Poverty affects access to food, education, healthcare, and basic human rights. 
-                Eradicating it requires policies that ensure economic resources and services for all, 
-                with a focus on marginalized communities. By supporting inclusive development and fair wages, 
-                we can build a more equitable world.</p>
+            <p id="sdg12-intro" class="sdg-intro">The way we consume and produce shapes the future of our planet. 
+                SDG 12 focuses on using resources wisely, reducing waste, and promoting sustainability in every step 
+                of production and consumption. From individuals to industries, everyone plays a role in protecting the 
+                environment through responsible choices.</p>
+            <h2 id="sdg12-title">Responsible Consumption and Production</h2>
+            <p id="sdg12-description">Sustainable Development Goal 12 (SDG 12) aims to ensure sustainable consumption 
+                and production patterns. Our current use of resources is putting immense pressure on the planet. SDG 12 
+                targets include reducing waste, improving resource efficiency, encouraging sustainable business practices, 
+                and raising consumer awareness. It also promotes responsible food systems and sustainable public procurement. 
+                By changing the way we produce and consume, we can reduce environmental degradation, save resources, 
+                and foster sustainable growth. This goal calls on everyone—governments, businesses, and individuals—to make 
+                choices that protect the Earth and support future well-being.</p>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>

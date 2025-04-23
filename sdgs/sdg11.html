@@ -18,41 +18,51 @@
             <div></div>
         </div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About Us</a></li>
                 <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="sdg-page" style="
+    <main id="sdg11" class="sdg-page" style="
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
-                url('https://img.freepik.com/free-vector/illustration-human-avatar-with-environment_53876-17627.jpg?t=st=1740048998~exp=1740052598~hmac=b24ec241353b33cd910a24a75a6bf23884fcde2bb443fbf885b23c8daa3ed9ae&w=1380');
+    background: linear-gradient(rgba(255, 255, 255, 0.918), rgba(255, 255, 255, 0.047)), 
+                url('https://vectormine.b-cdn.net/wp-content/uploads/harmony_in_urban_sustainability_outline_diagram-1.jpg');
     background-size: cover;
     background-position: center;
     padding: 50px;
 ">
         <div class="sdg-content">
-            <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
-                challenges facing humanity. Despite progress, millions still live in extreme poverty. 
-                Sustainable economic growth, social protection, and equal opportunities are vital for 
-                addressing this global issue.</p>
-            <h2>Sustainable Cities and Communities</h2>
-            <p>Poverty affects access to food, education, healthcare, and basic human rights. 
-                Eradicating it requires policies that ensure economic resources and services for all, 
-                with a focus on marginalized communities. By supporting inclusive development and fair wages, 
-                we can build a more equitable world.</p>
+            <p id="sdg11-intro" class="sdg-intro">Cities are centers of culture, innovation, and economic growth—but they 
+                also face rising challenges like overcrowding, pollution, and inequality. SDG 11 aims to create urban spaces 
+                that are safe, inclusive, and environmentally responsible. By promoting sustainable infrastructure and 
+                accessible public services, it improves the lives of city residents. Well-planned cities build stronger 
+                communities and help ensure a better future for all.</p>
+            <h2 id="sdg11-title">Sustainable Cities and Communities</h2>
+            <p id="sdg11-description">Sustainable Development Goal 11 (SDG 11) seeks to make cities and human settlements 
+                inclusive, safe, resilient, and sustainable. As urban areas grow, challenges like overcrowding, pollution, 
+                and inadequate infrastructure arise. SDG 11 targets include ensuring access to affordable housing, 
+                sustainable transport, green public spaces, and disaster-resilient buildings. It also emphasizes 
+                participatory urban planning and reducing the environmental impact of cities. Sustainable cities foster 
+                better quality of life, economic opportunity, and environmental stewardship. By designing inclusive and 
+                forward-looking urban spaces, we create vibrant communities for current and future generations.</p>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>

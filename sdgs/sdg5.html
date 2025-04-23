@@ -18,16 +18,22 @@
             <div></div>
         </div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About Us</a></li>
                 <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="sdg-page" style="
+    <main id="sdg5" class="sdg-page" style="
     position: relative;
     display: flex;
     justify-content: center;
@@ -40,12 +46,11 @@
     padding: 50px;
 ">
         <div class="sdg-content">
-            <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
-                challenges facing humanity. Despite progress, millions still live in extreme poverty. 
-                Sustainable economic growth, social protection, and equal opportunities are vital for 
-                addressing this global issue.</p>
-            <h2>Gender Equality</h2>
-            <p>Sustainable Development Goal 5 (SDG 5) aims to achieve gender equality and empower all women and girls. 
+            <p id="sdg5-intro" class="sdg-intro">Achieving gender equality is key to building fair and thriving societies. 
+                Discrimination and unequal access to opportunities hold women and girls back worldwide. 
+                Promoting equal rights, safety, and representation helps unlock the full potential of every individual.</p>
+            <h2 id="sdg5-title">Gender Equality</h2>
+            <p id="sdg5-description">Sustainable Development Goal 5 (SDG 5) aims to achieve gender equality and empower all women and girls. 
                 Despite progress in recent years, gender discrimination remains deeply rooted in many societies, 
                 limiting access to education, employment, and decision-making roles. SDG 5 targets include eliminating 
                 gender-based violence, ensuring equal opportunities in leadership, and recognizing unpaid care work. 
@@ -58,7 +63,7 @@
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>

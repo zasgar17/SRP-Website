@@ -18,40 +18,53 @@
             <div></div>
         </div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About Us</a></li>
                 <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="sdg-page" style="
+    <main id="sdg1" class="sdg-page" style="
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
     background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
-                url('https://i.pinimg.com/736x/a5/b1/b5/a5b1b587c1bbeeac70800fa89df8adc0.jpg');
+                url('https://i.pinimg.com/736x/cc/e2/c5/cce2c5df077b1f09bd1772d08748a64b.jpg');
     background-size: cover;
     background-position: center;
     padding: 50px;
 ">
         <div class="sdg-content">
-            <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
-                challenges facing humanity. Despite progress, millions still live in extreme poverty. 
-                Sustainable economic growth, social protection, and equal opportunities are vital for 
-                addressing this global issue.</p>
-            <h2>No Poverty</h2>
-            <p>Poverty affects access to food, education, healthcare, and basic human rights. 
-                Eradicating it requires policies that ensure economic resources and services for all, 
-                with a focus on marginalized communities. By supporting inclusive development and fair wages, 
-                we can build a more equitable world.</p>
+            <!-- Dynamic Content based on language -->
+            <p id="sdg1-intro" class="sdg-intro">Poverty remains one of the most pressing global challenges. 
+                While progress has been made, millions still struggle to meet basic needs and live with dignity. 
+                Ending poverty means more than increasing income—it requires access to education, healthcare, 
+                social protection, and equal opportunities. By creating inclusive systems and supporting the most vulnerable, 
+                we can build a future where no one is left behind.</p>
+            <h2 id="sdg1-title">No Poverty</h2>
+            <p id="sdg1-description">Sustainable Development Goal 1 (SDG 1) aims to end poverty in all its forms everywhere.
+                While global poverty rates have declined over the years, millions of people still live in extreme poverty, 
+                struggling to meet basic needs such as food, shelter, and healthcare. SDG 1 targets include eradicating 
+                extreme poverty, ensuring access to social protection systems, and building resilience to economic, social, 
+                and environmental shocks. Poverty is not just about lack of income—it’s also about exclusion, inequality, 
+                and vulnerability. Achieving this goal means investing in education, job opportunities, and fair economic 
+                growth. It also requires coordinated action from governments, businesses, and communities to create inclusive 
+                systems that leave no one behind. Ending poverty is the first step toward a more equitable and sustainable 
+                world.</p>
         </div>
     </main>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>
     </footer>

@@ -18,16 +18,22 @@
             <div></div>
         </div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About Us</a></li>
                 <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="sdg-page" style="
+    <main id="sdg16" class="sdg-page" style="
     position: relative;
     display: flex;
     justify-content: center;
@@ -40,12 +46,12 @@
     padding: 50px;
 ">
         <div class="sdg-content">
-            <p class="sdg-intro">Promoting peace, justice, and strong institutions is essential for sustainable development. 
+            <p id="sdg16-intro" class="sdg-intro">Promoting peace, justice, and strong institutions is essential for sustainable development. 
                 Conflict, corruption, and weak governance threaten human rights and hinder progress. Strengthening the rule of law, 
                 ensuring access to justice, and fostering transparent institutions are crucial steps toward building inclusive 
                 and equitable societies.</p>
-            <h2>Peace, Justice and Strong Institutions</h2>
-            <p>Sustainable Development Goal 16 (SDG 16) seeks to promote peaceful and inclusive societies, 
+            <h2 id="sdg16-title">Peace, Justice and Strong Institutions</h2>
+            <p id="sdg16-description">Sustainable Development Goal 16 (SDG 16) seeks to promote peaceful and inclusive societies, 
                 ensure access to justice, and build strong institutions at all levels. Conflict, corruption, 
                 and weak governance undermine human rights and development, making it difficult for communities to thrive. 
                 SDG 16 addresses issues such as violence, human trafficking, bribery, and discriminatory laws. 
@@ -58,7 +64,7 @@
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>

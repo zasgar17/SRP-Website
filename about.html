@@ -23,44 +23,117 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h2>Meet Our Team</h2>
+    <main id="about">
+        <style>
+            h2 {
+                color: rgb(62, 77, 22);
+                font-size: 40px;
+                text-align: center;
+                margin-top: 40px;
+                font-family: Arial, sans-serif;
+            }
+        </style>
+        <h2 id="about-title">Meet Our Team</h2>
         <div class="team-grid">
             <div class="team-member">
                 <img src="images/team1.jpeg" alt="Teammate 1">
-                <p><strong>Name 1</strong><br>Short description about them.</p>
+                <p>
+                    <strong><span id="maryam-name">Maryam Valiyeva</span></strong><br>
+                    <span id="maryam-role">Student of ADA University<br>Bachelor of Arts in Public Affairs</span><br>
+                    <a href="mailto:mvaliyeva20310@ada.edu.az">
+                        <img src="images/pngwing.com.png" class="icon" alt="Mail Icon"> mvaliyeva20310@ada.edu.az<br>
+                    </a>
+                    <a href="https://www.linkedin.com/in/maryam-valiyeva-4607ab22a" target="_blank">
+                        <img src="images/pngwingin.com.png" class="icon" alt="LinkedIn"> LinkedIn
+                    </a>
+                </p>
             </div>
+    
             <div class="team-member">
-                <img src="images/team2.jpg" alt="Teammate 2">
-                <p><strong>Name 2</strong><br>Short description about them.</p>
+                <img src="images/team2.jpeg" alt="Teammate 2">
+                <p>
+                    <strong><span id="zahra-name">Zahra Asgarova</span></strong><br>
+                    <span id="zahra-role">Student of ADA University<br>Bachelor of Science in Computer Engineering</span><br>
+                    <a href="mailto:zasgarova17875@ada.edu.az">
+                        <img src="images/pngwing.com.png" class="icon" alt="Email"> zasgarova17875@ada.edu.az<br>
+                    </a>
+                    <a href="https://www.linkedin.com/in/zəhra-əsgər-b86a79291" target="_blank">
+                        <img src="images/pngwingin.com.png" class="icon" alt="LinkedIn"> LinkedIn
+                    </a>
+                </p>
             </div>
+    
             <div class="team-member">
                 <img src="images/team3.jpeg" alt="Teammate 3">
-                <p><strong>Jalə</strong><br>Short description about them.</p>
+                <p>
+                    <strong><span id="zhala-name">Zhala Rasulova</span></strong><br>
+                    <span id="zhala-role">Student of ADA University<br>Bachelor of Science in Finance</span><br>
+                    <a href="mailto:zrasulova18670@ada.edu.az">
+                        <img src="images/pngwing.com.png" class="icon" alt="Email"> zrasulova18670@ada.edu.az
+                    </a>
+                </p>
             </div>
+    
             <div class="team-member">
-                <img src="images/team4.jpg" alt="Teammate 4">
-                <p><strong>Name 4</strong><br>Short description about them.</p>
+                <img src="images/team4.jpeg" alt="Teammate 4">
+                <p>
+                    <strong><span id="aisha-name">Aisha Yagubova</span></strong><br>
+                    <span id="aisha-role">Student of ADA University<br>Bachelor of Science in Finance</span><br>
+                    <a href="mailto:ayagubova20049@ada.edu.az">
+                        <img src="images/pngwing.com.png" class="icon" alt="Email"> ayagubova20049@ada.edu.az
+                    </a>
+                </p>
             </div>
+    
             <div class="team-member">
                 <img src="images/team5.jpeg" alt="Teammate 5">
-                <p><strong>Fuad</strong><br>Short description about them.</p>
+                <p>
+                    <strong><span id="fuad-name">Fuad Abbaszada</span></strong><br>
+                    <span id="fuad-role">Student of ADA University<br>Bachelor of Science in Information Technologies</span><br>
+                    <a href="mailto:fabbaszada17914@ada.edu.az">
+                        <img src="images/pngwing.com.png" class="icon" alt="Email"> fabbaszada17914@ada.edu.az
+                    </a>
+                </p>
             </div>
+    
             <div class="team-member">
-                <img src="images/team6.jpg" alt="Teammate 6">
-                <p><strong>Name 6</strong><br>Short description about them.</p>
+                <img src="images/team6.jpeg" alt="Teammate 6">
+                <p>
+                    <strong><span id="jeyhun-name">Jeyhun Mirzayev</span></strong><br>
+                    <span id="jeyhun-role">Student of ADA University<br>Bachelor of Science in Economics</span><br>
+                    <a href="mailto:cmirzayev17996@ada.edu.az">
+                        <img src="images/pngwing.com.png" class="icon" alt="Email"> cmirzayev17996@ada.edu.az
+                    </a>
+                </p>
             </div>
+    
             <div class="team-member">
                 <img src="images/team7.jpg" alt="Teammate 7">
-                <p><strong>Name 7</strong><br>Short description about them.</p>
+                <p>
+                    <strong><span id="nihad-name">Nihad Ganbarov</span></strong><br>
+                    <span id="nihad-role">Student of ADA University<br>Bachelor of Science in Finance</span><br>
+                    <a href="mailto:nganbarov17989@edu.az">
+                        <img src="images/pngwing.com.png" class="icon" alt="Email"> nganbarov17989@edu.az<br>
+                    </a>
+                    <a href="https://linkedin.com/in/nihad-ganbarov-37517528a" target="_blank">
+                        <img src="images/pngwingin.com.png" class="icon" alt="LinkedIn"> LinkedIn
+                    </a>
+                </p>
             </div>
         </div>
     </main>
+    
 
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>

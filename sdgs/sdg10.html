@@ -18,34 +18,41 @@
             <div></div>
         </div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About Us</a></li>
                 <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="sdg-page" style="
+    <main id="sdg10" class="sdg-page" style="
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
-                url('https://i.pinimg.com/736x/02/2f/34/022f3475e3849e09b4529224f00d8e6d.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.373), rgba(255, 255, 255, 0.047)), 
+                url('https://i.pinimg.com/736x/82/60/75/8260754546fabdeea3ae94b954ed4b86.jpg');
     background-size: cover;
     background-position: center;
     padding: 50px;
 ">
         <div class="sdg-content">
-            <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
-                challenges facing humanity. Despite progress, millions still live in extreme poverty. 
-                Sustainable economic growth, social protection, and equal opportunities are vital for 
-                addressing this global issue.</p>
-            <h2>Reduced Inequalities</h2>
-            <p>Sustainable Development Goal 10 (SDG 10) focuses on reducing inequalities within and among countries, 
+            <p id="sdg10-intro" class="sdg-intro">Inequality remains a major challenge, with disparities in income, 
+                opportunities, and access to basic services widening globally. SDG 10 aims to reduce these inequalities by 
+                promoting social, economic, and political inclusion. It targets discrimination based on age, gender, race, 
+                and migration status while ensuring fair wages and equal access to education and healthcare. By addressing 
+                inequalities, SDG 10 creates a more stable, prosperous world where no one is left behind.</p>
+            <h2 id="sdg10-title">Reduced Inequalities</h2>
+            <p id="sdg10-description">Sustainable Development Goal 10 (SDG 10) focuses on reducing inequalities within and among countries, 
                 addressing disparities in income, opportunities, and access to essential services. 
                 Economic inequality has widened globally, with wealth concentrated in the hands of a few while 
                 marginalized communities struggle with poverty and exclusion. SDG 10 aims to promote social, economic, 
@@ -58,7 +65,7 @@
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>

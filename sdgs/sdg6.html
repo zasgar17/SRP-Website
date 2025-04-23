@@ -18,41 +18,53 @@
             <div></div>
         </div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About Us</a></li>
                 <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../language.html">Language</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="sdg-page" style="
+    <main id="sdg6" class="sdg-page" style="
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
     background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
-                url('https://i.pinimg.com/736x/a5/b1/b5/a5b1b587c1bbeeac70800fa89df8adc0.jpg');
+                url('https://i.pinimg.com/1200x/49/af/49/49af492b9f4ac671d8e13eb0f967236b.jpg');
     background-size: cover;
     background-position: center;
     padding: 50px;
 ">
         <div class="sdg-content">
-            <p class="sdg-intro">Ending poverty in all its forms remains one of the greatest 
-                challenges facing humanity. Despite progress, millions still live in extreme poverty. 
-                Sustainable economic growth, social protection, and equal opportunities are vital for 
-                addressing this global issue.</p>
-            <h2>Clean Water and Sanitation</h2>
-            <p>Poverty affects access to food, education, healthcare, and basic human rights. 
-                Eradicating it requires policies that ensure economic resources and services for all, 
-                with a focus on marginalized communities. By supporting inclusive development and fair wages, 
-                we can build a more equitable world.</p>
+            <p id="sdg6-intro" class="sdg-intro">Access to clean water and proper sanitation is vital for public health, 
+                human dignity, and environmental sustainability. Yet, billions of people still live without safe drinking 
+                water and basic hygiene services. Achieving SDG 6 means building resilient water systems, improving 
+                sanitation infrastructure, and protecting water-related ecosystems. Clean water is not only a basic human 
+                right—it is also key to health, education, gender equality, and sustainable development. With innovation, 
+                investment, and cooperation, a future with safe water for all is possible.</p>
+            <h2 id="sdg6-title">Clean Water and Sanitation</h2>
+            <p id="sdg6-description">Sustainable Development Goal 6 (SDG 6) aims to ensure availability and sustainable management 
+                of water and sanitation for all. Clean water is essential for health, survival, and dignity, yet billions still 
+                lack safe water and proper sanitation. SDG 6 targets include achieving universal access to safe drinking water, 
+                improving water quality, increasing water-use efficiency, and protecting water-related ecosystems. 
+                It also promotes the importance of hygiene and equitable sanitation facilities. Water is a human right 
+                and a cornerstone of public health. Ensuring clean and accessible water for all supports better health, 
+                gender equality, and sustainable development. Reaching this goal requires infrastructure, innovation, 
+                and global cooperation.</p>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>
