@@ -52,70 +52,70 @@ function setLanguage(language) {
                 language: "Dil"
             }
         },
-        about: {
-            en: {
-                title: "Meet Our Team",
-                maryam: {
-                    name: "Maryam Valiyeva",
-                    role: "Student of ADA University<br>Bachelor of Arts in Public Affairs"
-                },
-                zahra: {
-                    name: "Zahra Asgarova",
-                    role: "Student of ADA University<br>Bachelor of Science in Computer Engineering"
-                },
-                zhala: {
-                    name: "Zhala Rasulova",
-                    role: "Student of ADA University<br>Bachelor of Science in Finance"
-                },
-                aisha: {
-                    name: "Aisha Yagubova",
-                    role: "Student of ADA University<br>Bachelor of Science in Finance"
-                },
-                fuad: {
-                    name: "Fuad Abbaszada",
-                    role: "Student of ADA University<br>Bachelor of Science in Information Technologies"
-                },
-                jeyhun: {
-                    name: "Jeyhun Mirzayev",
-                    role: "Student of ADA University<br>Bachelor of Science in Economics"
-                },
-                nihad: {
-                    name: "Nihad Ganbarov",
-                    role: "Student of ADA University<br>Bachelor of Science in Finance"
-                }
-            },
-            az: {
-                title: "Komandamızla Tanış Olun",
-                maryam: {
-                    name: "Məryəm Vəliyeva",
-                    role: "ADA Universiteti Tələbəsi<br>İctimai İşlər üzrə Bakalavr"
-                },
-                zahra: {
-                    name: "Zəhra Əsgərova",
-                    role: "ADA Universiteti Tələbəsi<br>Kompüter Mühəndisliyi üzrə Bakalavr"
-                },
-                zhala: {
-                    name: "Zhala Rəsulova",
-                    role: "ADA Universiteti Tələbəsi<br>Maliyyə üzrə Bakalavr"
-                },
-                aisha: {
-                    name: "Aişə Yaqubova",
-                    role: "ADA Universiteti Tələbəsi<br>Maliyyə üzrə Bakalavr"
-                },
-                fuad: {
-                    name: "Fuad Abbaszadə",
-                    role: "ADA Universiteti Tələbəsi<br>İnformasiya Texnologiyaları üzrə Bakalavr"
-                },
-                jeyhun: {
-                    name: "Ceyhun Mirzəyev",
-                    role: "ADA Universiteti Tələbəsi<br>İqtisadiyyat üzrə Bakalavr"
-                },
-                nihad: {
-                    name: "Nihad Qəmbərov",
-                    role: "ADA Universiteti Tələbəsi<br>Maliyyə üzrə Bakalavr"
-                }
-            }
-        },
+        // about: {
+        //     en: {
+        //         title: "Meet Our Team",
+        //         maryam: {
+        //             name: "Maryam Valiyeva",
+        //             role: "Student of ADA University<br>Bachelor of Arts in Public Affairs"
+        //         },
+        //         zahra: {
+        //             name: "Zahra Asgarova",
+        //             role: "Student of ADA University<br>Bachelor of Science in Computer Engineering"
+        //         },
+        //         zhala: {
+            //         name: "Zhala Rasulova",
+            //         role: "Student of ADA University<br>Bachelor of Science in Finance"
+            //     },
+            //     aisha: {
+            //         name: "Aisha Yagubova",
+            //         role: "Student of ADA University<br>Bachelor of Science in Finance"
+            //     },
+            //     fuad: {
+            //         name: "Fuad Abbaszada",
+            //         role: "Student of ADA University<br>Bachelor of Science in Information Technologies"
+            //     },
+            //     jeyhun: {
+            //         name: "Jeyhun Mirzayev",
+            //         role: "Student of ADA University<br>Bachelor of Science in Economics"
+            //     },
+            //     nihad: {
+            //         name: "Nihad Ganbarov",
+            //         role: "Student of ADA University<br>Bachelor of Science in Finance"
+            //     }
+            // },
+        //     az: {
+        //         title: "Komandamızla Tanış Olun",
+        //         maryam: {
+        //             name: "Məryəm Vəliyeva",
+        //             role: "ADA Universiteti Tələbəsi<br>İctimai İşlər üzrə Bakalavr"
+        //         },
+        //         zahra: {
+        //             name: "Zəhra Əsgərova",
+        //             role: "ADA Universiteti Tələbəsi<br>Kompüter Mühəndisliyi üzrə Bakalavr"
+        //         },
+        //         zhala: {
+        //             name: "Zhala Rəsulova",
+        //             role: "ADA Universiteti Tələbəsi<br>Maliyyə üzrə Bakalavr"
+        //         },
+        //         aisha: {
+        //             name: "Aişə Yaqubova",
+        //             role: "ADA Universiteti Tələbəsi<br>Maliyyə üzrə Bakalavr"
+        //         },
+        //         fuad: {
+        //             name: "Fuad Abbaszadə",
+        //             role: "ADA Universiteti Tələbəsi<br>İnformasiya Texnologiyaları üzrə Bakalavr"
+        //         },
+        //         jeyhun: {
+        //             name: "Ceyhun Mirzəyev",
+        //             role: "ADA Universiteti Tələbəsi<br>İqtisadiyyat üzrə Bakalavr"
+        //         },
+        //         nihad: {
+        //             name: "Nihad Qəmbərov",
+        //             role: "ADA Universiteti Tələbəsi<br>Maliyyə üzrə Bakalavr"
+        //         }
+        //     }
+        // },
         
         sdg1: {
             en: {

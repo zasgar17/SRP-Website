@@ -1,0 +1,245 @@
+body {
+    font-family: 'League Spartan', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefcf7;
+    align-items: center;
+  }
+  
+  header {
+    display: flex;
+    background-color: #fbf4e4;
+    color: rgba(106, 131, 43, 1);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 90px; /* Adjust as needed */
+    margin-right: 10px; /* Space between the logo and text */
+    margin-left: 40px;
+  }
+  
+  .site-name{
+    display: flex; 
+    align-items: center;
+    gap: 15px; 
+  }
+  
+  header .site-name h1 {
+    font-size: 24px;
+    margin-left: 0px;
+    white-space: nowrap;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    margin-right: 60px;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 15px;
+  }
+  
+  nav ul li a {
+    color: rgba(106, 131, 43, 1);
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+    display: flex;
+    margin: 30px;
+  }
+  
+  .left {
+    width: 30%;
+    padding-right: 20px;
+    border-right: 2px solid #ccc;
+  }
+  
+  .right {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  form input, form button {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .post {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .language-options {
+    display: none;
+    position: absolute;
+    background-color: #fbf4e4;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 100;
+  }
+  
+  .language-dropdown {
+    position: relative;
+  }
+  
+  .language-dropdown.open .language-options {
+    display: block;
+  }
+  
+  .language-options li {
+    margin: 5px 0;
+  }
+  
+  .language-options li a {
+    color: rgba(106, 131, 43, 1);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .language-options li a:hover {
+    text-decoration: underline;
+  }
+  
+  .language-options a.active-lang {
+    font-weight: bold;
+    color: rgb(68, 83, 28);
+  }
+
+
+  main {
+    padding: 2rem;
+  }
+  
+  #postContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .post-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .post-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .post-card .description {
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgba(106, 131, 43, 1);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+footer {
+    background-color: #fbf4e4;
+    color: rgba(106, 131, 43, 1);
+    text-align: center;
+    padding: 15px;
+}
+
+/* Carousel post card styling */
+.carousel-card {
+    position: relative;
+  }
+  
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 400px;
+    background-color: #e0e0e0c2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 2;
+  }
+  
+  .arrow.left {
+    left: 10px;
+    margin-left: -70px;
+  }
+  
+  .arrow.right {
+    right: 10px;
+  }
+  
+  .carousel-card .description {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  
