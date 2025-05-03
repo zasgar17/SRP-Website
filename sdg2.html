@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act for Impact</title>
+    <link rel="stylesheet" href="sdgs.css">
+</head>
+<body>
+    <header>
+        <div class="site-name">
+            <img src="logocopy.jpeg" alt="Site Logo" class="logo">
+            <h1>Act for Impact</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="sdg2" class="sdg-page" style="
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
+                url('https://i.pinimg.com/736x/db/3d/fc/db3dfccf463d051946c70c6e26461416.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+">
+        <div class="sdg-content">
+            <p id="sdg2-intro" class="sdg-intro">Hunger and malnutrition continue to affect millions of people worldwide, 
+                undermining health, development, and well-being. Ending hunger is not just about providing food—it’s about 
+                ensuring access to safe, nutritious, and sufficient food for everyone. Achieving zero hunger requires 
+                resilient food systems, support for small-scale farmers, and sustainable agricultural practices that protect 
+                both people and the planet. By tackling food insecurity and promoting nutrition, we can build healthier, 
+                stronger, and more resilient communities.</p>
+            <h2 id="sdg2-title">Zero Hunger</h2>
+            <p id="sdg2-description">Sustainable Development Goal 2 (SDG 2) seeks to end hunger, achieve food security, 
+                improve nutrition, and promote sustainable agriculture. Despite progress, hunger 
+                and malnutrition still affect millions of people, particularly in developing countries. 
+                SDG 2 targets include ensuring access to safe, nutritious food for all, ending all forms 
+                of malnutrition, and supporting small-scale farmers with resources and fair markets. 
+                It also emphasizes the importance of sustainable food production systems and resilient 
+                agricultural practices that adapt to climate change. Achieving zero hunger means more 
+                than just feeding people—it’s about empowering communities, protecting the environment,
+                and building strong, local food systems. A well-nourished world is healthier, 
+                more productive, and better equipped to face future challenges.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Act for Impact. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

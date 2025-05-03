@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act for Impact</title>
+    <link rel="stylesheet" href="sdgs.css">
+</head>
+<body>
+    <header>
+        <div class="site-name">
+            <img src="logocopy.jpeg" alt="Site Logo" class="logo">
+            <h1>Act for Impact</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="sdg3" class="sdg-page" style="
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
+                url('https://i.pinimg.com/736x/b4/b3/a0/b4b3a0f67dad9a927339a2cb8b6fcd1f.jpg');
+                
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+">
+        <div class="sdg-content">
+            <p id="sdg3-intro" class="sdg-intro">Ensuring healthy lives and promoting well-being for all is 
+                fundamental to sustainable development. Health challenges such as pandemics, maternal and 
+                child mortality, and mental health disorders continue to strain communities and systems. 
+                Universal access to quality healthcare, essential medicines, and preventive services is 
+                crucial. Building resilient health systems and promoting mental and physical well-being 
+                are key steps toward achieving equity and enabling individuals to thrive in all aspects of life.</p>
+            <h2 id="sdg3-title">Good Health and Well-being</h2>
+            <p id="sdg3-description">Sustainable Development Goal 3 (SDG 3) aims to ensure healthy lives and 
+                promote well-being for all at all ages. While significant progress has been made in 
+                reducing child mortality and fighting diseases, challenges like healthcare access, 
+                pandemics, and mental health issues persist. SDG 3 targets include reducing maternal 
+                and child mortality, combating epidemics, ensuring universal health coverage, and 
+                promoting mental health and well-being. It also stresses the importance of access to 
+                essential medicines, vaccines, and healthcare services. Good health is foundational to 
+                personal and societal development. By investing in strong health systems, education, and 
+                preventive care, communities can thrive and individuals can reach their full potential.</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+    <footer>
+        <p>&copy; 2025 Act for Impact. All rights reserved.</p>
+    </footer>
+</body>
+</html>

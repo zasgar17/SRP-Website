@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act for Impact</title>
+    <link rel="stylesheet" href="sdgs.css">
+</head>
+<body>
+    <header>
+        <div class="site-name">
+            <img src="logocopy.jpeg" alt="Site Logo" class="logo">
+            <h1>Act for Impact</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="sdg7" class="sdg-page" style="
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
+                url('https://i.pinimg.com/736x/9d/a5/d4/9da5d45f97945731bd44e647cd592e9b.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+">
+        <div class="sdg-content">
+            <p id="sdg7-intro" class="sdg-intro">Energy is at the heart of development—it powers homes, schools, hospitals, 
+                and industries. Yet millions still live without electricity or rely on polluting energy sources. 
+                Clean and affordable energy not only improves daily life but also supports innovation and reduces 
+                environmental impact. Achieving SDG 7 means increasing the use of renewable energy, improving efficiency, 
+                and ensuring that everyone, everywhere, can access reliable and modern energy.</p>
+            <h2 id="sdg7-title">Affordable and Clean Energy</h2>
+            <p id="sdg7-description">Sustainable Development Goal 7 (SDG 7) seeks to ensure access to affordable, 
+                reliable, sustainable, and modern energy for all. Energy powers economies, supports healthcare and education, 
+                and improves quality of life. Yet, many people still lack access to electricity or rely on harmful cooking 
+                methods. SDG 7 targets include expanding renewable energy use, improving energy efficiency, and enhancing 
+                international cooperation on clean energy technologies. Clean energy reduces environmental harm and fosters 
+                economic growth. Achieving this goal means transitioning to low-carbon systems, supporting innovation, 
+                and making energy solutions accessible and affordable worldwide.</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+    <footer>
+        <p>&copy; 2025 Act for Impact. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act for Impact</title>
+    <link rel="stylesheet" href="sdgs.css">
+</head>
+<body>
+    <header>
+        <div class="site-name">
+            <img src="logocopy.jpeg" alt="Site Logo" class="logo">
+            <h1>Act for Impact</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="sdg12" class="sdg-page" style="
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
+                    url('https://vectormine.b-cdn.net/wp-content/uploads/circular_economy_and_life_cycle_assessment_outline_concept-1.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 50px;
+    ">    <div class="sdg-content">
+            <p id="sdg12-intro" class="sdg-intro">The way we consume and produce shapes the future of our planet. 
+                SDG 12 focuses on using resources wisely, reducing waste, and promoting sustainability in every step 
+                of production and consumption. From individuals to industries, everyone plays a role in protecting the 
+                environment through responsible choices.</p>
+            <h2 id="sdg12-title">Responsible Consumption and Production</h2>
+            <p id="sdg12-description">Sustainable Development Goal 12 (SDG 12) aims to ensure sustainable consumption 
+                and production patterns. Our current use of resources is putting immense pressure on the planet. SDG 12 
+                targets include reducing waste, improving resource efficiency, encouraging sustainable business practices, 
+                and raising consumer awareness. It also promotes responsible food systems and sustainable public procurement. 
+                By changing the way we produce and consume, we can reduce environmental degradation, save resources, 
+                and foster sustainable growth. This goal calls on everyone—governments, businesses, and individuals—to make 
+                choices that protect the Earth and support future well-being.</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+    <footer>
+        <p>&copy; 2025 Act for Impact. All rights reserved.</p>
+    </footer>
+</body>
+</html>

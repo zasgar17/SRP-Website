@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Share a Post</title>
+    <link rel="stylesheet" href="share.css">
 </head>
 <body>
     <header>
@@ -23,6 +23,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="posts.html">Posts</a></li> 
                 <li class="language-dropdown">
                     <a href="#" onclick="toggleDropdown(event)">Language</a>
                     <ul class="language-options">
@@ -35,14 +36,22 @@
     </header>
 
     <main>
-        <h2>Contact Us</h2>
-        <p>Feel free to reach out to us via email at <a href="mailto:info@actforimpact.org">info@actforimpact.org</a>.</p>
+        <h2>Share Your Post</h2>
+        <form id="shareForm">
+            <label for="imageUpload">Upload Image:</label>
+            <input type="file" id="imageUpload" accept="*" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" placeholder="Write about your post..." required></textarea>
+            
+            <button type="submit">Share</button>
+        </form>
     </main>
 
     <footer>
         <p>&copy; 2025 Act for Impact. All rights reserved.</p>
     </footer>
-    
-    <script src="script.js"></script>
+
+    <script src="share.js"></script>
 </body>
 </html>

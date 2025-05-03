@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act for Impact</title>
+    <link rel="stylesheet" href="sdgs.css">
+</head>
+<body>
+    <header>
+        <div class="site-name">
+            <img src="logocopy.jpeg" alt="Site Logo" class="logo">
+            <h1>Act for Impact</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="sdg13" class="sdg-page" style="
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.773), rgba(255, 255, 255, 0.047)), 
+                url('https://vectormine.b-cdn.net/wp-content/uploads/climate_change_action-1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+">
+        <div class="sdg-content">
+            <p id="sdg13-intro" class="sdg-intro">Climate change is a global crisis that threatens our environment, 
+                health, and future. SDG 13 focuses on urgent action to reduce emissions, strengthen resilience, 
+                and support climate solutions. Tackling climate change requires global cooperation, innovation, 
+                and bold commitment from all levels of society.</p>
+            <h2 id="sdg13-title">Climate Action</h2>
+            <p id="sdg13-description">Sustainable Development Goal 13 (SDG 13) urges urgent action to combat climate change 
+                and its impacts. Climate change affects every aspect of life, from health and food security to migration 
+                and economic stability. SDG 13 targets include strengthening resilience to climate-related hazards, 
+                integrating climate action into national policies, and improving education on climate issues. 
+                It also calls for international cooperation and financial support for developing countries. 
+                Climate action is essential for protecting our planet and securing a sustainable future. By reducing 
+                emissions, transitioning to clean energy, and building resilient communities, we can tackle one of the 
+                greatest challenges of our time.</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+    <footer>
+        <p>&copy; 2025 Act for Impact. All rights reserved.</p>
+    </footer>
+</body>
+</html>

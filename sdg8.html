@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act for Impact</title>
+    <link rel="stylesheet" href="sdgs.css">
+</head>
+<body>
+    <header>
+        <div class="site-name">
+            <img src="logocopy.jpeg" alt="Site Logo" class="logo">
+            <h1>Act for Impact</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="language-dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Language</a>
+                    <ul class="language-options">
+                        <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                        <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="sdg8" class="sdg-page" style="
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.716), rgba(255, 255, 255, 0.047)), 
+                url('https://i.pinimg.com/736x/78/84/0a/78840a13e4e976e5ae06ce990a6a857a.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+">
+        <div class="sdg-content">
+            <p id="sdg8-intro" class="sdg-intro">Work is more than a source of income—it brings dignity, purpose, 
+                and a path to a better life. Yet, many people around the world face unemployment, job insecurity, 
+                or unsafe conditions. SDG 8 focuses on promoting inclusive economic growth by ensuring decent work, 
+                supporting innovation, and creating opportunities for all. Sustainable economies depend on productive jobs, 
+                fair wages, and safe workplaces. When people have access to meaningful employment, communities thrive and 
+                prosperity becomes possible for everyone.</p>
+            <h2 id="sdg8-title">Decent Work and Economic Growth</h2>
+            <p id="sdg8-description">Sustainable Development Goal 8 (SDG 8) promotes sustained, inclusive, and sustainable 
+                economic growth, full and productive employment, and decent work for all. In a rapidly changing global 
+                economy, many face unemployment, underemployment, or poor working conditions. SDG 8 targets include 
+                promoting youth employment, ensuring safe work environments, supporting entrepreneurship, and reducing 
+                the informal labor market. It also emphasizes sustainable tourism, innovation, and fair global labor 
+                practices. Decent work empowers individuals and drives economic resilience. By creating job opportunities 
+                and fostering inclusive economic policies, SDG 8 supports prosperity that benefits everyone.</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+    <footer>
+        <p>&copy; 2025 Act for Impact. All rights reserved.</p>
+    </footer>
+</body>
+</html>
