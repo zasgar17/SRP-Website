@@ -1,91 +1,82 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const multer = require('multer');
-const cors = require('cors');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const app = express();
 const PORT = 3000;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+const USERS_CSV = path.join(__dirname, 'users.csv');
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use('/images', express.static(path.join(__dirname, 'public/images')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname)); // Serve HTML/CSS/JS from root folder
 
-const usersFile = path.join(__dirname, 'users.csv');
-const postsFile = path.join(__dirname, 'posts.csv');
-
-// === Image Upload Setup ===
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, 'public/images'),
-    filename: (req, file, cb) => {
-        const uniqueName = Date.now() + '-' + file.originalname;
-        cb(null, uniqueName);
-    }
-});
-const upload = multer({ storage });
-
-// === Helper: Read CSV ===
-function readCSV(filePath) {
-    if (!fs.existsSync(filePath)) return [];
-    const content = fs.readFileSync(filePath, 'utf8');
-    return content.trim().split('\n').map(line => line.split(','));
+// Ensure users.csv exists
+if (!fs.existsSync(USERS_CSV)) {
+    fs.writeFileSync(USERS_CSV, 'username,password\n');
 }
 
-// === Register ===
+// Simulated session store
+let sessions = {};
+
+function readUsers() {
+    const data = fs.readFileSync(USERS_CSV, 'utf8');
+    return data.trim().split('\n').slice(1).map(line => {
+        const [username, password] = line.split(',');
+        return { username, password };
+    });
+}
+
+function userExists(username) {
+    return readUsers().some(u => u.username === username);
+}
+
+function writeUser(username, password) {
+    fs.appendFileSync(USERS_CSV, `${username},${password}\n`);
+}
+
+// Routes
 app.post('/register', (req, res) => {
     const { username, password } = req.body;
-    const users = readCSV(usersFile);
-    if (users.find(u => u[0] === username)) {
-        return res.status(400).json({ message: 'Username already exists' });
+    if (userExists(username)) {
+        return res.status(400).send('Username already exists.');
     }
-    fs.appendFileSync(usersFile, `${username},${password}\n`);
-    res.cookie('username', username, { httpOnly: true });
-    res.json({ message: 'Registered successfully' });
+    writeUser(username, password);
+    res.send('Registered successfully!');
 });
 
-// === Login ===
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-    const users = readCSV(usersFile);
-    const user = users.find(u => u[0] === username && u[1] === password);
+    const user = readUsers().find(u => u.username === username && u.password === password);
     if (!user) {
-        return res.status(401).json({ message: 'Invalid credentials' });
+        return res.status(401).send('Invalid credentials.');
     }
-    res.cookie('username', username, { httpOnly: true });
-    res.json({ message: 'Logged in' });
+    const sessionId = `${Date.now()}-${Math.random()}`;
+    sessions[sessionId] = username;
+    res.cookie('sessionId', sessionId, { httpOnly: true });
+    res.send('Logged in successfully!');
 });
 
-// === Logout ===
-app.post('/logout', (req, res) => {
-    res.clearCookie('username');
-    res.json({ message: 'Logged out' });
+app.get('/logout', (req, res) => {
+    const sessionId = req.cookies.sessionId;
+    delete sessions[sessionId];
+    res.clearCookie('sessionId');
+    res.send('Logged out.');
 });
 
-// === Share a Post ===
-app.post('/share', upload.single('image'), (req, res) => {
-    const username = req.cookies.username;
-    if (!username) return res.status(403).json({ message: 'Unauthorized' });
-
-    const { description } = req.body;
-    const imagePath = `/images/${req.file.filename}`;
-    fs.appendFileSync(postsFile, `${username},${description},${imagePath}\n`);
-    res.json({ message: 'Post shared' });
-});
-
-// === Get Posts ===
-app.get('/posts', (req, res) => {
-    const posts = readCSV(postsFile).map(([username, description, imagePath]) => ({
-        username,
-        description,
-        imagePath
-    }));
-    res.json(posts);
+app.get('/auth-status', (req, res) => {
+    const sessionId = req.cookies.sessionId;
+    const loggedIn = sessionId && sessions[sessionId];
+    res.json({ loggedIn: !!loggedIn });
 });
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
+
+if (!password || password.length < 6) {
+    return res.status(400).send('Password must be at least 6 characters long.');
+}

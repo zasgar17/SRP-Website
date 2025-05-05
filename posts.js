@@ -150,4 +150,50 @@ function toggleMenu() {
     });
   }
     
-  
+  window.addEventListener('DOMContentLoaded', () => {
+    fetch('/auth-status')
+        .then(res => res.json())
+        .then(data => {
+            const authLink = document.getElementById('authLink');
+            if (data.loggedIn) {
+                authLink.innerHTML = '<a href="#" onclick="logout()">Logout</a>';
+            } else {
+                authLink.innerHTML = '<a href="login.html">Login</a>';
+            }
+        });
+});
+
+function logout() {
+    fetch('/logout').then(() => {
+        alert('Logged out!');
+        window.location.reload();
+    });
+}
+async function updateAuthLink() {
+  const res = await fetch('/auth-status');
+  const { loggedIn } = await res.json();
+
+  const authLink = document.getElementById('authLink');
+  const aTag = authLink.querySelector('a');
+
+  if (loggedIn) {
+      aTag.textContent = 'Logout';
+      aTag.href = '#';
+      aTag.onclick = function (e) {
+          e.preventDefault();
+          fetch('/logout')
+              .then(res => res.text())
+              .then(msg => {
+                  alert(msg);
+                  window.location.href = 'index.html';
+              });
+      };
+  } else {
+      aTag.textContent = 'Login';
+      aTag.href = 'login.html';
+      aTag.onclick = null;
+  }
+}
+
+// Run on page load
+updateAuthLink();

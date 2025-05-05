@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="posts.css">
+</head>
+<body>
+<header>        
+    <div class="site-name">
+    <img src="logocopy.jpeg" alt="Site Logo" class="logo">
+    <h1>Act for Impact</h1>
+</div>
+<div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<nav>
+    <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="share.html">Share</a></li> 
+        <li id="authLink"><a href="login.html">Login</a></li>
+        <li class="language-dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Language</a>
+            <ul class="language-options">
+                <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+</header>
+
+<main style="text-align:center; margin-top: 50px;">
+    <h2>Login</h2>
+    <form id="loginForm" action="/login" method="POST">
+        <input type="text" name="username" required placeholder="Username">
+        <input type="password" name="password" required minlength="6" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+    
+    <p>Don't have an account? <a href="register.html">Register</a></p>
+</main>
+
+<footer> <p>&copy; 2025 Act for Impact. All rights reserved.</p> </footer>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = new FormData(this);
+    const res = await fetch('/login', {
+        method: 'POST',
+        body: new URLSearchParams(form)
+    });
+    const msg = await res.text();
+    alert(msg);
+    if (res.ok) window.location.href = 'share.html';
+});
+function logout() {
+    fetch('/logout')
+        .then(res => res.text())
+        .then(msg => {
+            alert(msg);
+            window.location.href = 'login.html';
+        });
+}
+async function updateAuthLink() {
+    const res = await fetch('/auth-status');
+    const { loggedIn } = await res.json();
+
+    const authLink = document.getElementById('authLink');
+    const aTag = authLink.querySelector('a');
+
+    if (loggedIn) {
+        aTag.textContent = 'Logout';
+        aTag.href = '#';
+        aTag.onclick = function (e) {
+            e.preventDefault();
+            fetch('/logout')
+                .then(res => res.text())
+                .then(msg => {
+                    alert(msg);
+                    window.location.href = 'index.html';
+                });
+        };
+    } else {
+        aTag.textContent = 'Login';
+        aTag.href = 'login.html';
+        aTag.onclick = null;
+    }
+}
+
+// Run on page load
+updateAuthLink();
+</script>
+</body>
+</html>
