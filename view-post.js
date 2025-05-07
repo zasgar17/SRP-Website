@@ -16,7 +16,6 @@ async function loadPost() {
     const post = await response.json();
 
     document.getElementById("postTitle").textContent = post.name;
-    document.getElementById("postUser").textContent = post.username || "Anonymous";
     document.getElementById("postSDGs").textContent = post.sdgNumbers;
     document.getElementById("postDescription").textContent = post.description;
 

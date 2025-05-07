@@ -171,7 +171,11 @@ body {
   
   .description span {
     color: #666;
-  }  
+  } 
+  
+.srpProjectTitle h2{
+  color: rgb(54, 67, 22);;
+}
 
 /* Hamburger menu styles */
 .hamburger {

@@ -327,12 +327,18 @@ function setLanguage(language) {
     // Apply navbar text
     const navTexts = translations.nav[language];
     const navItems = document.querySelectorAll("#navMenu > li > a");
-    if (navItems.length >= 4) {
+    if (navItems.length >= 5) {
         navItems[0].textContent = navTexts.home;
         navItems[1].textContent = navTexts.about;
         navItems[2].textContent = navTexts.contact;
-        navItems[3].textContent = navTexts.language;
+        // navItems[3] is Posts – don't touch it
+        // Only change the language dropdown text separately:
+        const langDropdown = document.querySelector(".language-dropdown > a");
+        if (langDropdown) {
+            langDropdown.textContent = navTexts.language;
+        }
     }
+    
 
     // Handle all page translations
     const main = document.querySelector("main");
