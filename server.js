@@ -3,16 +3,17 @@ const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const multer = require('multer');
 
 const app = express();
 const PORT = 3000;
-
 const USERS_CSV = path.join(__dirname, 'users.csv');
+const upload = multer({ dest: 'uploads/' });
 
-// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(__dirname)); // Serve HTML/CSS/JS from root folder
+app.use(express.static(__dirname)); // Serve static files
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Ensure users.csv exists
 if (!fs.existsSync(USERS_CSV)) {
@@ -38,9 +39,12 @@ function writeUser(username, password) {
     fs.appendFileSync(USERS_CSV, `${username},${password}\n`);
 }
 
-// Routes
+// Registration route
 app.post('/register', (req, res) => {
     const { username, password } = req.body;
+    if (!password || password.length < 6) {
+        return res.status(400).send('Password must be at least 6 characters long.');
+    }
     if (userExists(username)) {
         return res.status(400).send('Username already exists.');
     }
@@ -48,6 +52,7 @@ app.post('/register', (req, res) => {
     res.send('Registered successfully!');
 });
 
+// Login route
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
     const user = readUsers().find(u => u.username === username && u.password === password);
@@ -60,6 +65,7 @@ app.post('/login', (req, res) => {
     res.send('Logged in successfully!');
 });
 
+// Logout
 app.get('/logout', (req, res) => {
     const sessionId = req.cookies.sessionId;
     delete sessions[sessionId];
@@ -67,16 +73,53 @@ app.get('/logout', (req, res) => {
     res.send('Logged out.');
 });
 
+// Auth status
 app.get('/auth-status', (req, res) => {
     const sessionId = req.cookies.sessionId;
     const loggedIn = sessionId && sessions[sessionId];
     res.json({ loggedIn: !!loggedIn });
 });
 
+// Get posts
+app.get('/get-posts', (req, res) => {
+    try {
+        const postsPath = path.join(__dirname, 'posts.json');
+        const posts = fs.existsSync(postsPath)
+            ? JSON.parse(fs.readFileSync(postsPath))
+            : [];
+        res.json(posts);
+    } catch (err) {
+        console.error('Error reading posts:', err);
+        res.status(500).json({ error: 'Failed to load posts' });
+    }
+});
+
+// Share post
+app.post('/share', upload.array('images'), (req, res) => {
+    const { projectName, description, sdgNumbers } = req.body;
+    const sessionId = req.cookies.sessionId;
+    const username = sessions[sessionId] || 'Unknown';
+
+    const imagePaths = req.files.map(file => file.path);
+    const post = {
+        projectName,
+        description,
+        sdgNumbers,
+        username,
+        imagePaths
+    };
+
+    let existingPosts = [];
+    if (fs.existsSync('posts.json')) {
+        existingPosts = JSON.parse(fs.readFileSync('posts.json'));
+    }
+    existingPosts.push(post);
+    fs.writeFileSync('posts.json', JSON.stringify(existingPosts, null, 2));
+
+    res.redirect('/posts.html');
+});
+
+// Start server
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
-
-if (!password || password.length < 6) {
-    return res.status(400).send('Password must be at least 6 characters long.');
-}

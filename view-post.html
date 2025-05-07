@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post</title>
+  <link rel="stylesheet" href="view-post.css">
+</head>
+<body>
+  <header>
+    <div class="site-name">
+      <img src="logocopy.jpeg" alt="Site Logo" class="logo">
+      <h1>Act for Impact</h1>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="posts.html">Posts</a></li> 
+        <li id="authLink"><a href="login.html">Login</a></li>
+        <li class="language-dropdown">
+          <a href="#" onclick="toggleDropdown(event)">Language</a>
+          <ul class="language-options">
+            <li><a href="#" onclick="setLanguage('en')">English</a></li>
+            <li><a href="#" onclick="setLanguage('az')">Azerbaijani</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 id="postTitle"></h1>
+    <p><strong>Shared by:</strong> <span id="postUser"></span></p>
+    <p><strong>SDGs:</strong> <span id="postSDGs"></span></p>
+    <div id="carousel" class="carousel"></div>
+    <div class="details">
+      <p id="postDescription"></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Act for Impact. All rights reserved.</p>
+  </footer>
+
+  <script src="view-post.js"></script>
+</body>
+</html>

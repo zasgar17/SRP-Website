@@ -1,3 +1,6 @@
+const apiUrl = 'https://681a717317018fe50577d7a0.mockapi.io/ActForImpact/ActForImpact';
+const postsGrid = document.getElementById('postsGrid');
+
 function toggleMenu() {
     const navMenu = document.getElementById("navMenu");
     navMenu.classList.toggle("active");
@@ -25,121 +28,34 @@ function toggleMenu() {
         document.querySelectorAll('.language-dropdown').forEach(drop => drop.classList.remove('open'));
     }
   });
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem("language") || "en";
-    setLanguage(savedLang);
-  });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById("postContainer");
-  
-    // Dummy data
-    const posts = [
-      {
-        image: "https://via.placeholder.com/300",
-        description: "Planting trees in rural areas to combat climate change."
-      },
-      {
-        image: "https://via.placeholder.com/300",
-        description: "Youth-led water conservation project."
-      },
-      {
-        image: "https://via.placeholder.com/300",
-        description: "Clean-up drive near coastal areas for SDG 14."
-      }
-    ];
-  
-    posts.forEach(post => {
-      const card = document.createElement("div");
-      card.className = "post-card";
-      card.innerHTML = `
-        <img src="${post.image}" alt="Shared project">
-        <div class="description">${post.description}</div>
-      `;
-      container.appendChild(card);
-    });
-  });
 
-  const imageLinks = [
-    "Act for Impact Final.jpg",
-    "Act for Impact Final (1).jpg",
-    "Act for Impact Final (2).jpg",
-    "Act for Impact Final (3).jpg",
-  ];
+  // const translations = {
+  //   en: {
+  //     srpProjectTitle: "Our SRP Project",
+  //     srpProjectDescription: `<strong>Our SDG Project:</strong> As part of our SRP (Social Responsibility Project), we organized a tree planting activity with school students, with support from the Ministry of Ecology and Natural Resources. First, we reached out to different organizations, and the Ministry of Ecology agreed to help us. Then we contacted several schools and found one that allowed us to take their students to the tree planting area provided by the Ministry.
   
-  let currentIndex = 0;
-  
-  function showImage(index) {
-    const img = document.getElementById("carouselImage");
-    if (img) {
-      img.src = imageLinks[index];
-    }
-  }
-  
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + imageLinks.length) % imageLinks.length;
-    showImage(currentIndex);
-  }
-  
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % imageLinks.length;
-    showImage(currentIndex);
-  }
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    showImage(currentIndex); // Initial load
-  
-    // Load rest of posts below the SDG post
-    const container = document.getElementById("postContainer");
-    const posts = [
-      {
-        image: "https://via.placeholder.com/300",
-        description: "Youth SDG project: Community clean-up in parks."
-      },
-      {
-        image: "https://via.placeholder.com/300",
-        description: "Rainwater harvesting system for Goal 6."
-      }
-    ];
-  
-    posts.forEach(post => {
-      const card = document.createElement("div");
-      card.className = "post-card";
-      card.innerHTML = `
-        <img src="${post.image}" alt="Shared project">
-        <div class="description">${post.description}</div>
-      `;
-      container.appendChild(card);
-    });
-  });
-
-  const translations = {
-    en: {
-      srpProjectTitle: "Our SRP Project",
-      srpProjectDescription: `<strong>Our SDG Project:</strong> As part of our SRP (Social Responsibility Project), we organized a tree planting activity with school students, with support from the Ministry of Ecology and Natural Resources. First, we reached out to different organizations, and the Ministry of Ecology agreed to help us. Then we contacted several schools and found one that allowed us to take their students to the tree planting area provided by the Ministry.
-  
-      Together with the students, we planted trees and raised awareness about protecting nature. We also created a website about the 17 Sustainable Development Goals (SDGs), available in both English and Azerbaijani. On the website, we shared our tree planting project as an example to inspire others. <br>
+  //     Together with the students, we planted trees and raised awareness about protecting nature. We also created a website about the 17 Sustainable Development Goals (SDGs), available in both English and Azerbaijani. On the website, we shared our tree planting project as an example to inspire others. <br>
       
-      With this project, we supported the following SDGs:<br>
-      SDG 4 – Quality Education<br>
-      SDG 13 – Climate Action<br>
-      SDG 15 – Life on Land<br>
-      SDG 17 – Partnerships for the Goals`
-    },
-    az: {
-      srpProjectTitle: "SRP Layihəmiz",
-      srpProjectDescription: `<strong>SDG Layihəmiz:</strong> SRP (Sosial Məsuliyyət Layihəsi) çərçivəsində məktəb şagirdləri ilə birlikdə Ekologiya və Təbii Sərvətlər Nazirliyinin dəstəyi ilə ağacəkmə aksiyası təşkil etdik. Əvvəlcə müxtəlif təşkilatlarla əlaqə saxladıq və Nazirlik bizə dəstək oldu. Daha sonra bir neçə məktəblə əlaqə saxladıq və bir məktəb bizimlə bu aksiyada iştirak etməyə razılıq verdi.
+  //     With this project, we supported the following SDGs:<br>
+  //     SDG 4 – Quality Education<br>
+  //     SDG 13 – Climate Action<br>
+  //     SDG 15 – Life on Land<br>
+  //     SDG 17 – Partnerships for the Goals`
+  //   },
+  //   az: {
+  //     srpProjectTitle: "SRP Layihəmiz",
+  //     srpProjectDescription: `<strong>SDG Layihəmiz:</strong> SRP (Sosial Məsuliyyət Layihəsi) çərçivəsində məktəb şagirdləri ilə birlikdə Ekologiya və Təbii Sərvətlər Nazirliyinin dəstəyi ilə ağacəkmə aksiyası təşkil etdik. Əvvəlcə müxtəlif təşkilatlarla əlaqə saxladıq və Nazirlik bizə dəstək oldu. Daha sonra bir neçə məktəblə əlaqə saxladıq və bir məktəb bizimlə bu aksiyada iştirak etməyə razılıq verdi.
   
-      Şagirdlərlə birlikdə ağaclar əkdik və təbiətin qorunması barədə maarifləndirmə apardıq. Eyni zamanda, 17 Davamlı İnkişaf Məqsədi (SDG) haqqında veb sayt yaratdıq. Saytda bu layihəni paylaşaraq başqalarını da ruhlandırmaq istədik. <br>
+  //     Şagirdlərlə birlikdə ağaclar əkdik və təbiətin qorunması barədə maarifləndirmə apardıq. Eyni zamanda, 17 Davamlı İnkişaf Məqsədi (SDG) haqqında veb sayt yaratdıq. Saytda bu layihəni paylaşaraq başqalarını da ruhlandırmaq istədik. <br>
       
-      Bu layihə ilə biz aşağıdakı SDG-ləri dəstəklədik:<br>
-      SDG 4 – Keyfiyyətli Təhsil<br>
-      SDG 13 – İqlim Dəyişikliyinə Qarşı Mübarizə<br>
-      SDG 15 – Quru Ekosistemlərinin Mühafizəsi<br>
-      SDG 17 – Məqsədlər üçün Tərəfdaşlıq`
-    }
-  };
+  //     Bu layihə ilə biz aşağıdakı SDG-ləri dəstəklədik:<br>
+  //     SDG 4 – Keyfiyyətli Təhsil<br>
+  //     SDG 13 – İqlim Dəyişikliyinə Qarşı Mübarizə<br>
+  //     SDG 15 – Quru Ekosistemlərinin Mühafizəsi<br>
+  //     SDG 17 – Məqsədlər üçün Tərəfdaşlıq`
+  //   }
+  // };
   function setLanguage(lang) {
     localStorage.setItem("language", lang);
   
@@ -197,3 +113,55 @@ async function updateAuthLink() {
 
 // Run on page load
 updateAuthLink();
+
+async function loadPosts() {
+  try {
+    const response = await fetch(apiUrl);
+    const posts = await response.json();
+
+    if (posts.length === 0) {
+      postsGrid.innerHTML = '<p>No posts to display.</p>';
+      return;
+    }
+
+    postsGrid.innerHTML = ''; // Clear previous content
+
+    posts.forEach(p => {
+      const img = p.images && p.images.length ? p.images[0] : 'uploads/placeholder.jpg';
+      const card = document.createElement('a');
+      card.href = `view-post.html?id=${p.id}`;
+      card.className = 'post-card';
+      card.innerHTML = `
+        <img src="${img}" alt="${p.name}">
+        <div class="description">
+          <strong>${p.name}</strong><br>
+          <span>SDGs: ${p.sdgNumbers}</span>
+        </div>
+      `;
+      postsGrid.appendChild(card);
+    });
+
+    // Optional SRP card
+    const srpCard = document.createElement('a');
+    postsGrid.appendChild(srpCard);
+  } catch (error) {
+    postsGrid.innerHTML = '<p>Error loading posts.</p>';
+  }
+}
+
+// Call it on page load
+window.addEventListener('DOMContentLoaded', loadPosts);
+
+posts.forEach(project => {
+  const card = document.createElement('div');
+  card.className = 'post-card';
+  card.innerHTML = `
+      <a href="view-post.html?id=${project.id}">
+          <img src="${project.images[0]}" alt="Project Image">
+          <h3>${project.name}</h3>
+          <p>${project.username}</p>
+          <p>SDGs: ${project.sdgNumbers.join(', ')}</p>
+      </a>
+  `;
+  postsGrid.appendChild(card);
+});

@@ -37,16 +37,28 @@
     </header>
 
     <main>
-        <h2>Share Your Post</h2>
-        <form id="shareForm">
-            <label for="imageUpload">Upload Image:</label>
-            <input type="file" id="imageUpload" accept="*" required>
-            
-            <label for="description">Description:</label>
-            <textarea id="description" placeholder="Write about your post..." required></textarea>
-            
-            <button type="submit">Share</button>
-        </form>
+        <!-- Side-by-side container -->
+<section class="interaction-section"> 
+    <!-- Share -->
+    <div class="share-container">
+      <h2>Share a New Project</h2>
+      <form id="shareForm">
+        <input type="text" id="projectName" placeholder="Project Name" required />
+        <textarea id="description" placeholder="Project Description" required></textarea>
+        <input type="text" id="sdgNumbers" placeholder="SDG Numbers (e.g., 4, 13)" required />
+        <input type="text" id="imageUrls" placeholder="Image URLs (comma-separated)" />
+        <button type="submit">Share</button>
+      </form>
+      <p id="formMessage"></p>
+    </div>
+        <!-- Search -->
+        <div class="search-container">
+            <h2>Find a Project</h2>
+            <input type="text" id="searchInput" placeholder="Search by project name or SDG number..." />
+            <div id="searchResults" class="results"></div>
+          </div>
+  </section>  
+          
     </main>
 
     <footer>
